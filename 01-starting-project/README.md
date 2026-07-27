@@ -1,6 +1,6 @@
 # 01-starting-project
 
-Projeto React criado durante o curso.
+Projeto React criado durante o curso "React - The Complete Guide" por Academind (Maximilian Schwarzmüller).
 
 Instalação e execução:
 
