@@ -1,8 +1,8 @@
 # 01-starting-project
 
-Projeto React criado durante o curso "React - The Complete Guide" por Academind (Maximilian Schwarzmüller).
+React project created during the course "React - The Complete Guide" by Academind (Maximilian Schwarzmüller).
 
-Instalação e execução:
+Installation and running:
 
 ```bash
 npm install
@@ -15,10 +15,3 @@ Build:
 npm run build
 ```
 
-Para adicionar um repositório remoto (ex.: GitHub):
-
-```bash
-git remote add origin <URL_DO_REPOSITORIO>
-git branch -M main
-git push -u origin main
-```
