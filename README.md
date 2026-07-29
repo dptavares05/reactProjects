@@ -10,9 +10,9 @@ npm install
 npm run dev
 ```
 
-Build:
+Accessing the page locally:
 
 ```bash
-npm run build
+http://localhost:5173/
 ```
 
