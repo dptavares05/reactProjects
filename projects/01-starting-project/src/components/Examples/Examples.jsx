@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { EXAMPLES } from '../../data.js';
 import TabButton from '../TabButton.jsx';
+import Section from '../Section/Section.jsx';
 
 export default function Examples(){
 
     const [selectedTopic, setSelectedTopic] = useState();
 
-    function handleClick(selectedButton) {
+    function handleSelect(selectedButton) {
         setSelectedTopic(selectedButton);
         console.log(selectedTopic);
     }
@@ -28,38 +29,38 @@ export default function Examples(){
     }
 
     return (
-         <section id="examples">
+         <Section id="examples">
                   <h2>Examples</h2>
                   <menu>
                     <TabButton 
-                      onSelect={() => handleClick('components')} 
                       isSelected={selectedTopic === 'components'}
+                      onClick={() => handleSelect('components')} 
                     >
                       Components
                     </TabButton>
         
                     <TabButton 
-                      onSelect={() => handleClick('jsx')}
                       isSelected={selectedTopic === 'jsx'}
+                      onClick={() => handleSelect('jsx')}
                     >
                       JSX
                     </TabButton>
         
                     <TabButton 
-                    onSelect={() => handleClick('props')}
                     isSelected={selectedTopic === 'props'}
+                    onClick={() => handleSelect('props')}
                     >
                      Props
                     </TabButton>
         
                     <TabButton 
-                      onSelect={() => handleClick('state')} 
                       isSelected={selectedTopic === 'state'}
+                      onClick={() => handleSelect('state')} 
                     >
                       State
                     </TabButton>
                   </menu>
-                  {!selectedTopic && ( <p>Please select a topic to view examples.</p>)} // if there is no selected topic, display this paragraph
+                  {!selectedTopic && ( <p>Please select a topic to view examples.</p>)}
                   {selectedTopic && ( //but if there is a selected topic, display the following div
                    <div id="tab-content">
                       <h3>{EXAMPLES[selectedTopic].title}</h3>
@@ -71,6 +72,6 @@ export default function Examples(){
                       </pre>
                     </div>
                     ) }
-                </section>
+                </Section>
     );
 }
