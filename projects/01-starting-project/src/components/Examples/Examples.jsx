@@ -33,7 +33,9 @@ export default function Examples(){
          <Section id="examples">
                   <h2>Examples</h2>
 
-                  <Tabs buttons ={
+                  <Tabs 
+                  ButtonsContainer="menu"
+                  buttons ={
                     <>
                     <TabButton 
                       isSelected={selectedTopic === 'components'}
@@ -64,7 +66,6 @@ export default function Examples(){
                     </TabButton>
                     </>
                   }> 
-                    {tabContent}
                   </Tabs>
                   {!selectedTopic && ( <p>Please select a topic to view examples.</p>)}
                   {selectedTopic && ( //but if there is a selected topic, display the following div
