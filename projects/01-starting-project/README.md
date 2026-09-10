@@ -1,17 +1,55 @@
-# 01-starting-project
+# React Core Concepts Explorer
 
-First project concluded during the course "React - The Complete Guide" by Academind (Maximilian Schwarzmüller).
-Currently it only has a simple React page that shows my solid fundamentals of REACT such as props, hooks and states.
+Interactive web application built to master and demonstrate foundational React architecture. Originally developed as the cornerstone project in **"React - The Complete Guide"** (Academind / Maximilian Schwarzmüller), structured with clean component patterns, state management, and modular styling.
 
-Installation and running:
+---
 
-```bash
-npm install
-npm run dev
+## 📸 Preview Screenshot
+
+![Application Preview](./src/assets/screenshot.png)
+
+---
+
+## 🛠️ Architecture & Core Concepts Applied
+
+- **Modular Component Tree:** Separated concerns into dedicated UI feature directories (`CoreConcept`, `Examples`, `Header`, `Tabs`).
+- **Component Composition & Slots:** Utilized `children` and named element props (such as `buttons` in `<Tabs />`) to achieve flexible content projection.
+- **Dynamic Component Identifiers:** Implemented dynamic wrapper tags (`ButtonsContainer = 'menu'`) to render semantic elements on demand without extra DOM nodes.
+- **Forwarded & Rest Props:** Used the JavaScript spread operator (`...props`) on reusable components like `<TabButton />` for native attribute extensibility.
+- **Reactive State & Conditional Rendering:** Managed active selection states to dynamically switch example panels and apply conditional styling classes.
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/             # Static graphics and concept illustrations
+├── components/
+│   ├── Card/           # Generic container wrappers
+│   ├── CoreConcept/    # Concept cards and grid presentation
+│   ├── Examples/       # Interactive tab panels and code previews
+│   ├── Header/         # Dynamic landing banner
+│   ├── Section/        # Structural section wrappers
+│   ├── Tabs/           # Dynamic container tabs slot
+│   └── TabButton.jsx   # Interactive atomic button component
+├── data.js             # Structured core concepts data source
+├── App.jsx             # Top-level application layout
+└── index.jsx           # React DOM root entry point
 ```
+## ⚙️ Installation & Running
 
-Accessing the page locally:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-http://localhost:5173/
-```
+2. **Access the page locally::**
+   ```bash
+   http://localhost:5173/
+   ```
+## 💡 Key Takeaways
+
+* Decoupled presentation from state orchestration to keep leaf components presentational and predictable.
+* Avoided prop drilling by leveraging component composition and slot patterns.
+* Built reusable atomic UI elements that gracefully forward standard HTML attributes.
