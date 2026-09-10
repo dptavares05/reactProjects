@@ -6,7 +6,7 @@ Interactive web application built to master and demonstrate foundational React a
 
 ## 📸 Preview Screenshot
 
-![Application Preview](./src/assets/screenshot.png)
+![Application Preview](screenshot.png)
 
 ---
 
