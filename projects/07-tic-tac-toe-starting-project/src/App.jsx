@@ -75,7 +75,7 @@ function App() {
           <Player initialName ="Player 2" symbol="O" isActive={activePlayer === 'O'}/>
         </ol>
 
-      {winner && <p>You won,{winner}!</p>}
+      
 
         <GameBoard 
           onSelectSquare={handleTurnChange} 
