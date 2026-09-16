@@ -53,6 +53,10 @@ function deriveWinner(gameBoard) {
 }
 
 function App() {
+  const [players, setPlayers] = useState({
+    'X': 'Player 1',
+    'O': 'Player 2'
+  });
   const [gameTurns, setGameTurns] = useState([]);
 
   const activePlayer = deriveActivePlayer(gameTurns);
@@ -60,6 +64,19 @@ function App() {
   const winner = deriveWinner(gameBoard);
 
   const hasDraw = gameTurns.length === 9 && !winner; // boolean value, all squares filled and no winner = a draw
+
+  function handlePlayernameChange(symbol, newName){
+    setPlayers(prevPlayers => {
+      return {
+        ...prevPlayers,
+        [symbol]: newName
+      }
+  });
+  }
+
+  function handleRestart(){
+    setGameTurns([]);
+  }
 
   function handleTurnChange(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
@@ -76,11 +93,28 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
-          <Player initialName="Player 2" symbol="O" isActive={activePlayer === "O"} />
+          <Player 
+            initialName="Player 1" 
+            symbol="X" 
+            isActive={activePlayer === "X"}
+              onChangeName={handlePlayernameChange} 
+          />
+          <Player 
+            initialName="Player 2" 
+            symbol="O" 
+            isActive={activePlayer === "O"} 
+              onChangeName={handlePlayernameChange}
+          />
         </ol>
 
-        {(winner || hasDraw) && <GameOver winner={winner}/>}
+        {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart}/>}
+        {(winner || hasDraw) && (
+          <GameOver
+            winner={winner}
+            winnerName={winner ? players[winner] : null}
+            onRestart={handleRestart}
+          />
+        )}
 
         <GameBoard onSelectSquare={handleTurnChange} board={gameBoard} />
       </div>
