@@ -1,55 +1,118 @@
-# React Core Concepts Explorer
+# React Essentials Viewer
 
-Interactive web application built to master and demonstrate foundational React architecture. Originally developed as the cornerstone project in **"React - The Complete Guide"** (Academind / Maximilian Schwarzmüller), structured with clean component patterns, state management, and modular styling.
-
----
-
-## 📸 Preview Screenshot
-
-![Application Preview](screenshot.png)
+An interactive reference application built with React and Vite to explore the concepts used in almost every React application. This project was developed as part of [React - The Complete Guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) by Academind.
 
 ---
 
-## 🛠️ Architecture & Core Concepts Applied
+## Project Overview
 
-- **Modular Component Tree:** Separated concerns into dedicated UI feature directories (`CoreConcept`, `Examples`, `Header`, `Tabs`).
-- **Component Composition & Slots:** Utilized `children` and named element props (such as `buttons` in `<Tabs />`) to achieve flexible content projection.
-- **Dynamic Component Identifiers:** Implemented dynamic wrapper tags (`ButtonsContainer = 'menu'`) to render semantic elements on demand without extra DOM nodes.
-- **Forwarded & Rest Props:** Used the JavaScript spread operator (`...props`) on reusable components like `<TabButton />` for native attribute extensibility.
-- **Reactive State & Conditional Rendering:** Managed active selection states to dynamically switch example panels and apply conditional styling classes.
+The application presents four essential React concepts: Components, JSX, Props, and State. Users can select a topic and view its explanation together with a practical code example, while the main page introduces each concept through reusable visual cards.
 
 ---
 
-## 📂 Project Structure
+## Preview
+
+![React Essentials Viewer](./Screenshot.png)
+
+---
+
+## Features
+
+- Interactive overview of four core React concepts
+- Reusable concept cards generated from structured data
+- Tab navigation for Components, JSX, Props, and State examples
+- Conditional rendering for the selected example
+- Syntax-formatted code snippets displayed with each topic
+- Reusable section, card, tab, and button components
+- Randomized introductory header description
+- Responsive layout with custom component styling
+
+---
+
+## Technologies & Tools
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+- React 19
+- React DOM
+- Vite
+- JavaScript and JSX
+- CSS
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+
+### Installation
+
+From this project directory, install the dependencies:
+
+```bash
+npm install
+```
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown by Vite in your browser.
+
+---
+
+## Available Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
+
+---
+
+## Project Structure
 
 ```text
 src/
-├── assets/             # Static graphics and concept illustrations
-├── components/
-│   ├── Card/           # Generic container wrappers
-│   ├── CoreConcept/    # Concept cards and grid presentation
-│   ├── Examples/       # Interactive tab panels and code previews
-│   ├── Header/         # Dynamic landing banner
-│   ├── Section/        # Structural section wrappers
-│   ├── Tabs/           # Dynamic container tabs slot
-│   └── TabButton.jsx   # Interactive atomic button component
-├── data.js             # Structured core concepts data source
-├── App.jsx             # Top-level application layout
-└── index.jsx           # React DOM root entry point
+  App.jsx                       # Top-level application layout
+  data.js                       # Core concepts and example content
+  index.jsx                     # React DOM entry point
+  index.css                     # Global styles
+  assets/                       # Concept illustrations and graphics
+  components/
+    Card/                       # Reusable content container
+    CoreConcept/                # Concept cards and concept grid
+    Examples/                   # Interactive example tabs and content
+    Header/                     # Page header and introductory content
+    Section/                    # Reusable section wrapper
+    Tabs/                       # Flexible tab container
+    TabButton.jsx               # Reusable selectable tab button
 ```
-## ⚙️ Installation & Running
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+---
 
-2. **Access the page locally::**
-   ```bash
-   http://localhost:5173/
-   ```
-## 💡 Key Takeaways
+## How It Works
 
-* Decoupled presentation from state orchestration to keep leaf components presentational and predictable.
-* Avoided prop drilling by leveraging component composition and slot patterns.
-* Built reusable atomic UI elements that gracefully forward standard HTML attributes.
+`data.js` contains the concept cards and example content. `CoreConcepts.jsx` maps over the concept data to render reusable `CoreConcept` components. `Examples.jsx` stores the selected topic in React state and conditionally renders the matching title, description, and code sample.
+
+The `Tabs` component receives its buttons through a `buttons` prop and supports a configurable container element. `TabButton` forwards standard button props, allowing the parent component to control selection and click behavior without duplicating tab logic.
+
+---
+
+## Learning Focus
+
+- Building reusable functional components
+- Passing data through props and spread props
+- Rendering lists from structured data
+- Managing interaction with `useState`
+- Conditional rendering based on application state
+- Component composition and slot-style content projection
+- Separating application data from presentation components
