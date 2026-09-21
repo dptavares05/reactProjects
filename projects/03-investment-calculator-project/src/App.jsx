@@ -4,10 +4,10 @@ import UserInputTable from "./Components/UserInputTable";
 
 function App() {
   return (
-    <div>
+    <>
       <Header text="Investment Calculator" img={logo} />
       <UserInputTable />
-    </div>
+    </>
   )
 }
 
