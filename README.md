@@ -83,7 +83,7 @@ coding-exercises/
 	ex10/ ... ex16/
 ```
 
-Each standalone project includes its own `README.md` with project-specific setup instructions where applicable.
+Each standalone project includes its own `README.md` with an explanation and a project-specific setup instructions where applicable.
 
 ---
 
