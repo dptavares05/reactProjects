@@ -63,9 +63,9 @@ Currently learning React and building small, focused applications to develop a p
 
 ## Core Competencies
 
-* **React Development**: Building reusable functional components with JSX, props, and state.
+* **React Development**: Building efficient functional components with JSX, props, and state.
 * **State Management**: Designing state-driven interfaces with event handlers and controlled inputs.
-* **Component Composition**: Breaking interfaces into focused components with clear responsibilities.
+* **Component Composition**: Creating interfaces with focused components and clear responsibilities.
 * **Frontend Fundamentals**: Structuring responsive interfaces with HTML, CSS, and modern JavaScript.
 * **Interactive UI**: Implementing forms, dynamic lists, game interactions, and calculated results.
 * **Development Workflow**: Using Vite, npm scripts, ESLint, and Git to develop and maintain projects.
